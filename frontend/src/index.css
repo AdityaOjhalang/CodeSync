@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#out-editor .ace_cursor-layer {
+  opacity: 0;
+}
+
+.ace_mobile-menu {
+  display: none;
+}
+
+@font-face {
+  font-family: "FiraCode";
+  src: local("FiraCode"),
+    url("./fonts/FiraMono/FiraCode.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "GoMono";
+  src: local("GoMono"), url("./fonts/GoMono/GoMono.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "JetBrainsMono";
+  src: local("JetBrainsMono"),
+    url("./fonts/JetBrainsMono/JetBrainsMono.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: local("Roboto"), url("./fonts/RobotoMono/Roboto.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "SourceCodePro";
+  src: local("SourceCodePro"),
+    url("./fonts/SourceCodePro/SourceCodePro.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "UbuntuMono";
+  src: local("UbuntuMono"),
+    url("./fonts/UbuntuMono/UbuntuMono.ttf") format("truetype");
+}
