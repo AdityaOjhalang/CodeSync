@@ -22,18 +22,21 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 // import SignUp from './components/SignUp';
 // import Profile from './components/profile';
 // import Feed from './components/Feed';
+import SignIn from './pages/SignIn';
 import CodeDashboard from "./pages/CodeDashboard";
+import SignUp from './pages/SignUp'
+import Home from './pages/Home'
 
 function App() {
   return (
     <Router>
       
       <Routes>
-        <Route exact path="/" element={<CodeDashboard />} />
-        {/* <Route path="/signin" element={<SignIn />} /> 
+        <Route path="/signin" element={<SignIn />} /> 
+        <Route path="/code" element={<CodeDashboard />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/feed" element={<Feed />} /> */}
+        <Route path="/home" element={<Home />} />
+        
       </Routes>
       
     </Router>

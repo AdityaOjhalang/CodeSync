@@ -1,0 +1,131 @@
+/* .App {
+    text-align: center;
+  }
+  
+  .App-header {
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .App-header nav ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .App-header nav ul li {
+    display: inline;
+    margin-right: 20px;
+  }
+  
+  .App-header nav ul li a {
+    text-decoration: none;
+    color: #000;
+  }
+  
+  .App-main {
+    margin: 20px;
+  }
+  
+  .Hero {
+    margin: 20px 0;
+  }
+  
+  .Hero h1 {
+    font-size: 4em;
+  }
+  
+  .Hero p {
+    color: #666;
+  }
+  
+  .JoinButton {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+  }
+  
+  figure img {
+    max-width: 100%;
+    height: auto;
+  }
+   */
+
+   .App {
+    text-align: center;
+  }
+  
+  .App-header {
+    background-color: #fff;
+    padding: 20px 0; /* Increase padding for more space */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: fixed; /* Make the header fixed to the top */
+    width: 100%; /* Full width */
+    top: 0; /* Stick to the top */
+    left: 0; /* Align left */
+  }
+  
+  .App-header nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex; /* Use flexbox to distribute space */
+    justify-content: center; /* Center the items */
+    margin: 0 auto; /* Auto margins for horizontal centering */
+  }
+  
+  .App-header nav ul li {
+    margin: 0 10px; /* Adjust margins as needed */
+  }
+  
+  .App-header nav ul li a {
+    text-decoration: none;
+    color: #000;
+  }
+  
+  .App-main {
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: calc(100vh - 60px); /* Take up all available height minus header */
+    margin-top: 60px; /* Push down from the header */
+    flex-direction: column; /* Stack items vertically */
+  }
+  
+  .Hero {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items */
+  }
+  
+  .Hero h1 {
+    font-size: 4em;
+  }
+  
+  .Hero p {
+    color: #666;
+  }
+  
+  .JoinButton {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 20px; /* Add space above the button */
+  }
+  
+  figure {
+    margin-top: 20px; /* Add space above the logo */
+  }
+  
+  figure img {
+    max-width: 300px; /* Set a max-width to control the logo size */
+    height: auto;
+  }
+  
