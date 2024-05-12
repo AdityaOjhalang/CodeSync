@@ -10,9 +10,9 @@ logger.setLevel(logging.INFO)
 def lambda_handler(event, context):
     # Log the incoming event
     logger.info(f"Received event: {event}")
-
-    # Extract the user ID from Cognito claims passed by API Gateway
-    user_id = event['requestContext']['authorizer']['claims']['sub']
+    
+    #Extract 
+    user_id = event['queryStringParameters'].get('userId', None)
 
     # Extract room_id from the query string parameters
     room_id = event['queryStringParameters'].get('roomId', None)
