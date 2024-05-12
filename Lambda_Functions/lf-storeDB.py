@@ -7,6 +7,10 @@ from datetime import datetime
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
+# Initialize a DynamoDB client
+dynamodb = boto3.resource('dynamodb')
+table = dynamodb.Table('Room-details')  # Ensure this is your actual table name
+
 def lambda_handler(event, context):
     # Log the incoming event
     logger.info(f"Received event: {event}")
@@ -27,10 +31,6 @@ def lambda_handler(event, context):
     # Assuming user details are passed as a JSON string in queryStringParameters
     user_details_str = event.get('queryStringParameters', {}).get('user_details', '{}')
     user_details = json.loads(user_details_str)  # Parse JSON string into Python dictionary
-
-    # Initialize a DynamoDB client
-    dynamodb = boto3.resource('dynamodb')
-    table = dynamodb.Table('Room-details')  # Ensure this is your actual table name
 
     current_time = datetime.now().isoformat()
 
