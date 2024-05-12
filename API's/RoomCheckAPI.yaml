@@ -1,0 +1,56 @@
+swagger: "2.0"
+info:
+  version: "1.0.0"
+  title: "RoomCheckAPI"
+basePath: "/prod"
+schemes:
+  - "https"
+paths:
+  /check-room:
+    get:
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - name: "roomId"
+          in: "query"
+          required: true
+          type: "string"
+          description: "The ID of the room to check."
+      responses:
+        200:
+          description: "Room ID exists"
+          schema:
+            type: "object"
+            properties:
+              roomId:
+                type: "string"
+              message:
+                type: "string"
+        400:
+          description: "Invalid request (no Room ID provided)"
+          schema:
+            type: "object"
+            properties:
+              roomId:
+                type: "null"
+              message:
+                type: "string"
+        404:
+          description: "Room ID not found"
+          schema:
+            type: "object"
+            properties:
+              roomId:
+                type: "null"
+              message:
+                type: "string"
+x-amazon-apigateway-integration:
+  uri: "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:654654423800:function:check-roomId/invocations"
+  responses:
+    default:
+      statusCode: "200"
+  passthroughBehavior: "when_no_match"
+  httpMethod: "POST"
+  type: "aws_proxy"
