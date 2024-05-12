@@ -15,7 +15,7 @@ def lambda_handler(event, context):
     user_id = event['requestContext']['authorizer']['claims']['sub']
 
     # Extract room_id from the query string parameters
-    room_id = event['queryStringParameters'].get('roomID', None)
+    room_id = event['queryStringParameters'].get('roomId', None)
     
     if not room_id:
         logger.error("Missing 'roomID' in query string parameters.")
