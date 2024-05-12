@@ -193,3 +193,5 @@ apigClientFactory.newClient = function (config) {
 
     return apigClient;
 };
+
+export default apigClientFactory;

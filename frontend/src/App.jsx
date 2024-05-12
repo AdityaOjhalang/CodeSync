@@ -21,13 +21,14 @@ import CodeDashboard from "./pages/CodeDashboard";
 import SignUp from './pages/SignUp'
 import Home from './pages/Home'
 
+
 function App() {
   return (
     <Router>
       
       <Routes>
         <Route exact path="/" element={<SignIn />} /> 
-        <Route path="/code/:roomId" element={<CodeDashboard />} />
+        <Route path="/code/:roomid" element={<CodeDashboard />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/home" element={<Home />} />
         

@@ -1,6 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { CognitoUser, AuthenticationDetails } from 'amazon-cognito-identity-js';
+import userPool from '../config/CognitoConfig';
 import classes from './SignIn.module.css'
 import Logo from "./logo-2.png";
+import { useNavigate } from 'react-router-dom';
+
+
 
 const App = () => {
   return (
@@ -10,7 +15,7 @@ const App = () => {
     </div>
   );
 };
-{/* <div className={classes["leftPanel"]}></div> */}
+
 const LeftPanel = () => {
   return (
     <div className={classes["leftPanel"]}>
@@ -24,28 +29,62 @@ const LeftPanel = () => {
   );
 };
 
+
 const RightPanel = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const navigate = useNavigate();
+
+  const handleSignIn = (event) => {
+      event.preventDefault();
+
+      const authenticationData = {
+          Username: email,
+          Password: password,
+      };
+
+      const authenticationDetails = new AuthenticationDetails(authenticationData);
+      const userData = {
+          Username: email,
+          Pool: userPool
+      };
+
+      const cognitoUser = new CognitoUser(userData);
+
+      cognitoUser.authenticateUser(authenticationDetails, {
+          onSuccess: (result) => {
+              console.log('access token + ' + result.getAccessToken().getJwtToken());
+              navigate('/home', { state: { email: email } }); // Redirect to home with email state
+          },
+          onFailure: (err) => {
+              alert(err.message || JSON.stringify(err));
+          },
+      });
+  };
+
   return (
-    <div className={classes["rightPanel"]}>
-      <h2 className='text-3xl'>Welcome back!</h2>
-      <p>Welcome to the new coding era!</p>
-      <form>
-        <div className={classes["inputGroup"]}>
-          <label htmlFor="email">E-mail or phone number</label>
-          <input type="text" id="email" />
-        </div>
-        <div className={classes["inputGroup"]}>
-          <label htmlFor="password">Password</label>
-          <input type="password" id="password" />
-        </div>
-        <div className={classes["forgotPassword"]}>Forgot Password?</div>
-        <button type="submit">Sign In</button>
-        <div className={classes["signUp"]}>
-          Don't have an account? <a href="/signup">Sign Up</a>
-        </div>
-      </form>
-    </div>
+      <div className={classes["rightPanel"]}>
+          <h2 className='text-3xl'>Welcome back!</h2>
+          <p>Welcome to the new coding era!</p>
+          <form onSubmit={handleSignIn}>
+              <div className={classes["inputGroup"]}>
+                  <label htmlFor="email">E-mail</label>
+                  <input type="email" id="email" placeholder="Enter your e-mail" value={email} onChange={(e) => setEmail(e.target.value)} />
+              </div>
+              <div className={classes["inputGroup"]}>
+                  <label htmlFor="password">Password</label>
+                  <input type="password" id="password" placeholder="Enter your password" value={password} onChange={(e) => setPassword(e.target.value)} />
+              </div>
+              <div className={classes["forgotPassword"]}>Forgot Password?</div>
+              <button type="submit">Sign In</button>
+              <div className={classes["signUp"]}>
+              Don't have an account? <a href="/signup">Sign Up</a>
+              </div>
+          </form>
+      </div>
   );
 };
+
+
 
 export default App;

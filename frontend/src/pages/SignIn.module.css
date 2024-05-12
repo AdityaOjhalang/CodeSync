@@ -1,80 +1,84 @@
 .container {
-    display: flex;
-    width: 100%;
-    min-height: 100vh;
-  }
-  
-  .leftPanel, .rightPanel {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-  }
-  
-  .leftPanel {
-    background-color: #353945; 
-    color: white;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .rightPanel {
-    background-color: #ffe1bc; 
-    justify-content: center;
-    align-items: center;
-    
-  }
-  
-  h1, h2, p {
-    margin: 10px 0;
-  }
-  
-  .graphic {
-    width: 150px;
-    height: 150px;
-    background-color: #555; 
-    margin: 20px 0;
-  }
-  
-  .inputGroup {
-    margin: 10px 0;
-  }
-  
-  .inputGroup label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  .inputGroup input {
-    width: 300px; 
-    padding: 10px;
-    margin-bottom: 10px;
-  }
-  
-  .forgotPassword {
-    margin: 10px 0;
-    cursor: pointer;
-  }
-  
-  button {
-    width: 100%;
-    padding: 10px;
-    background-color: black; 
-    color: white;
-    border: none;
-    margin: 20px 0;
-    cursor: pointer;
-  }
-  
-  .signUp {
-    margin: 10px 0;
-  }
-  
-  .signUp a {
-    text-decoration: none;
-    color: #333; 
-  }
-  
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+}
 
+.leftPanel, .rightPanel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
 
-  
+.leftPanel {
+  background-color: #353945;
+  color: white;
+  justify-content: center;
+  align-items: center;
+}
+
+.rightPanel {
+  background-color: #ffe1bc;
+  justify-content: center;
+  align-items: center;
+}
+
+h1, h2, p {
+  margin: 10px 0;
+}
+
+.graphic {
+  width: 150px;
+  height: 150px;
+  background-color: #555;
+  margin: 20px 0;
+}
+
+.inputGroup {
+  margin: 10px 0;
+}
+
+.inputGroup label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.inputGroup input {
+  width: 300px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.forgotPassword {
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.rightPanel button {
+width: 100%;
+padding: 10px;
+background-color: #007BFF; /* Constant blue background */
+color: white;
+border: none;
+margin: 20px 0;
+cursor: pointer;
+border-radius: 5px; /* Adds rounded corners */
+}
+
+.rightPanel button:hover {
+background-color: #0069d9; /* Slightly darker blue on hover */
+}
+
+.signUp {
+  margin: 10px 0;
+}
+
+.signUp a {
+  text-decoration: none;
+  color: #007BFF; /* Change to a blue color */
+}
+
+.signUp a:hover {
+  text-decoration: underline; /* Adds underline on hover */
+}
