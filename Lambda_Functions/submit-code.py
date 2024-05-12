@@ -6,7 +6,7 @@ import uuid
 def lambda_handler(event, context):
     s3 = boto3.client('s3')
     sqs = boto3.client('sqs')
-    room_id = event['room_id']
+    room_id = event['queryStringParameters']['roomId']
 
     # Configuration
     bucket_name = 'code-submissions-cc'
