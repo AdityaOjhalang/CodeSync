@@ -1,12 +1,11 @@
 import json
 import boto3
-import uuid
 import logging
 from datetime import datetime
 
 # Configure logging
 logger = logging.getLogger()
-logger.setLevel(logging.INFO)  
+logger.setLevel(logging.INFO)
 
 def lambda_handler(event, context):
     # Log the incoming event
@@ -14,18 +13,25 @@ def lambda_handler(event, context):
 
     # Extract the user ID from Cognito claims passed by API Gateway
     user_id = event['requestContext']['authorizer']['claims']['sub']
+
+    # Extract room_id from the query string parameters
+    room_id = event['queryStringParameters'].get('roomID', None)
     
+    if not room_id:
+        logger.error("Missing 'roomID' in query string parameters.")
+        return {
+            'statusCode': 400,
+            'body': json.dumps('Missing roomID in query parameters.')
+        }
+
     # Assuming user details are passed as a JSON string in queryStringParameters
     user_details_str = event.get('queryStringParameters', {}).get('user_details', '{}')
     user_details = json.loads(user_details_str)  # Parse JSON string into Python dictionary
 
-    # Generate a unique RoomID
-    room_id = str(uuid.uuid4())
-
     # Initialize a DynamoDB client
     dynamodb = boto3.resource('dynamodb')
-    table = dynamodb.Table('Room-details')  
-    
+    table = dynamodb.Table('Room-details')  # Ensure this is your actual table name
+
     current_time = datetime.now().isoformat()
 
     # Prepare the item to store in DynamoDB
