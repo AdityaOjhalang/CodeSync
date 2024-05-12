@@ -1,6 +1,9 @@
 import AceEditor from "react-ace";
+import { useWebSocket } from '../contexts/WebSocketContext';
 
 function OutputEditor() {
+  const { output } = useWebSocket();
+
   return (
     <div className="h-full w-full flex flex-col">
       <div className="bg-[#FCF1D3] dark:bg-[#01313F] text-center text-[#616161] dark:text-[#CCCCCC] font-bold">
@@ -10,7 +13,7 @@ function OutputEditor() {
         mode="plain_text"
         theme="solarized_light"
         name="out-editor"
-        value=""
+        value={output}
         fontSize={14}
         width="100%"
         height="100%"

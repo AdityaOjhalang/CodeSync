@@ -8,6 +8,7 @@ export function useWebSocket() {
 
 export const WebSocketProvider = ({ children, roomId }) => {
     const [code, setCode] = useState('');
+    const [output, setOutput] = useState('');
     const socketRef = useRef(null);
 
     useEffect(() => {
@@ -26,6 +27,9 @@ export const WebSocketProvider = ({ children, roomId }) => {
             console.log("Received data:", data);
             if (data.action === 'updateCode') {
                 setCode(data.code); // Update the code state on receiving new code
+            }
+            if (data.action === 'sendOutput') {
+                setOutput(data.output); // Update the code state on receiving new code
             }
         };
 
@@ -46,7 +50,7 @@ export const WebSocketProvider = ({ children, roomId }) => {
     };
 
     return (
-        <WebSocketContext.Provider value={{ send, socket: socketRef.current, code, setCode}}>
+        <WebSocketContext.Provider value={{ send, socket: socketRef.current, code, setCode, output, setOutput}}>
             {children}
         </WebSocketContext.Provider>
     );
