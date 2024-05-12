@@ -324,7 +324,7 @@ function App() {
       toast.error("No Room ID available. Please create one first.");
       return;
     }
-    navigate(`/room/${roomId}`);
+    navigate(`/code/${roomId}`);
     toast.success("Joining room: " + roomId);
   };
 
