@@ -4,7 +4,7 @@ import SettingsButton from "./SettingsButton";
 import FormatButton from "./FormatButton";
 import RunButton from "./RunButton";
 
-function NavBar() {
+function NavBar( roomId ) {
   return (
     <div className="w-full h-28 bg-[#FCF1D3] dark:bg-[#01313F] flex items-center px-3 justify-between">
       <div className="flex gap-4">
@@ -23,7 +23,7 @@ function NavBar() {
           className="w-72 rounded-lg h-10 border-[#717171] focus:border-[#717171] dark:border-[#93A1A1] dark:focus:border-[#93A1A1] bg-[#FDF6E3] dark:bg-[#012B36] text-[#717171] dark:text-[#93A1A1] focus:ring-transparent"
           placeholder="Command Line Arguments"
         ></input>
-        <RunButton />
+        <RunButton roomId={roomId}/>
       </div>
       <div className="flex gap-3 items-center">
         <ThemeButton />
