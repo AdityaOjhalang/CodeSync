@@ -3,6 +3,7 @@ import LanguageDropdown from "./LanguageDropdown";
 import SettingsButton from "./SettingsButton";
 import FormatButton from "./FormatButton";
 import RunButton from "./RunButton";
+import CloseButton from "./CloseButton"
 
 function NavBar( roomId ) {
   return (
@@ -24,6 +25,7 @@ function NavBar( roomId ) {
           placeholder="Command Line Arguments"
         ></input>
         <RunButton roomId={roomId}/>
+        <CloseButton />
       </div>
       <div className="flex gap-3 items-center">
         <ThemeButton />
