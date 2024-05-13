@@ -16,6 +16,9 @@ def execute_code():
     # Safe built-ins dictionary
     safe_builtins = {
         'print': print,
+        'range': range,
+        'sum': sum,
+        'max': max
         # Add other built-in functions you consider safe here
     }
 

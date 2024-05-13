@@ -1,0 +1,148 @@
+---
+swagger: "2.0"
+info:
+  version: "1.0"
+  title: "Python Code Processing API"
+host: "3blezbrfvh.execute-api.us-east-1.amazonaws.com"
+basePath: "/test"
+schemes:
+- "https"
+paths:
+  /createRoom:
+    post:
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "userId"
+        in: "query"
+        required: true
+        type: "string"
+      - name: "roomId"
+        in: "query"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "MODEL815b6f"
+        required: true
+        schema:
+          $ref: "#/definitions/MODEL815b6f"
+      responses:
+        "200":
+          description: "200 response"
+          headers:
+            Access-Control-Allow-Origin:
+              type: "string"
+        "400":
+          description: "400 response"
+    options:
+      consumes:
+      - "application/json"
+      responses:
+        "200":
+          description: "200 response"
+          headers:
+            Access-Control-Allow-Origin:
+              type: "string"
+            Access-Control-Allow-Methods:
+              type: "string"
+            Access-Control-Allow-Headers:
+              type: "string"
+  /fetchOutput:
+    post:
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "roomId"
+        in: "query"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "MODEL262611"
+        required: true
+        schema:
+          $ref: "#/definitions/MODEL262611"
+      responses:
+        "200":
+          description: "200 response"
+          headers:
+            Access-Control-Allow-Origin:
+              type: "string"
+        "400":
+          description: "400 response"
+    options:
+      consumes:
+      - "application/json"
+      responses:
+        "200":
+          description: "200 response"
+          headers:
+            Access-Control-Allow-Origin:
+              type: "string"
+            Access-Control-Allow-Methods:
+              type: "string"
+            Access-Control-Allow-Headers:
+              type: "string"
+  /submit:
+    post:
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "roomId"
+        in: "query"
+        required: true
+        type: "string"
+      - name: "code"
+        in: "query"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "MODEL783621"
+        required: true
+        schema:
+          $ref: "#/definitions/MODEL783621"
+      responses:
+        "200":
+          description: "200 response"
+          headers:
+            Access-Control-Allow-Origin:
+              type: "string"
+        "400":
+          description: "400 response"
+    options:
+      consumes:
+      - "application/json"
+      responses:
+        "200":
+          description: "200 response"
+          headers:
+            Access-Control-Allow-Origin:
+              type: "string"
+            Access-Control-Allow-Methods:
+              type: "string"
+            Access-Control-Allow-Headers:
+              type: "string"
+definitions:
+  MODEL815b6f:
+    type: "object"
+    properties:
+      filename:
+        type: "string"
+        description: "S3 key where the script is stored."
+  MODEL262611:
+    type: "object"
+    properties:
+      filename:
+        type: "string"
+        description: "S3 key where the script is stored."
+  MODEL783621:
+    type: "object"
+    properties:
+      content:
+        type: "string"
+        description: "Content of the Python script."
