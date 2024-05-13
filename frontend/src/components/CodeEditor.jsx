@@ -36,7 +36,6 @@ function CodeEditor({ roomId }) {
                     theme: 'solarized light',
                     lineNumbers: true,
                     readOnly: false,
-                    scroll: false
                 }}
                 onBeforeChange={handleCodeChange}
             />

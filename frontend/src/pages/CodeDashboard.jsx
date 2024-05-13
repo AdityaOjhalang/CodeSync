@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-import { NavBar, CodeEditor, OutputEditor, InputEditor } from "../components";
+import { NavBar, CodeEditor, OutputEditor } from "../components";
 import { LanguageContextProvider} from "../contexts";
 import { useParams } from "react-router-dom";
 import { WebSocketProvider } from '../contexts/WebSocketContext';
