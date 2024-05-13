@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-import { NavBar, CodeEditor, OutputEditor } from "../components";
+import { NavBar, CodeEditor, OutputEditor, InputEditor } from "../components";
 import { LanguageContextProvider} from "../contexts";
 import { useParams } from "react-router-dom";
 import { WebSocketProvider } from '../contexts/WebSocketContext';
@@ -64,7 +64,7 @@ function CodeDashboard() {
           <NavBar roomId={roomId}/>
           <CodeEditor roomId={roomId} />
           <div className="h-full w-full flex gap-3">
-            {/* <InputEditor /> */}
+            <InputEditor />
             <OutputEditor />
           </div>
         </div>

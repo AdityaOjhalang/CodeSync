@@ -12,7 +12,6 @@
   },
   "dependencies": {
     "amazon-cognito-identity-js": "^6.3.12",
-    "codemirror": "^5.65.16",
     "flowbite": "^1.6.2",
     "flowbite-react": "^0.3.7",
     "global": "^4.4.0",
@@ -21,7 +20,7 @@
     "jsonwebtoken": "^9.0.2",
     "jwt-decode": "^4.0.0",
     "react": "^18.2.0",
-    "react-codemirror2": "^8.0.0",
+    "react-ace": "^10.1.0",
     "react-dom": "^18.2.0",
     "react-hot-toast": "^2.4.1",
     "react-icons": "^4.7.1",
