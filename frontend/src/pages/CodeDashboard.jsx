@@ -64,7 +64,7 @@ function CodeDashboard() {
           <NavBar roomId={roomId}/>
           <CodeEditor roomId={roomId} />
           <div className="h-full w-full flex gap-3">
-            <InputEditor />
+            {/* <InputEditor /> */}
             <OutputEditor />
           </div>
         </div>
