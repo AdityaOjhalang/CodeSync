@@ -1,6 +1,6 @@
-// import ThemeButton from "./ThemeButton";
-// import LanguageDropdown from "./LanguageDropdown";
-// import SettingsButton from "./SettingsButton";
+import ThemeButton from "./ThemeButton";
+import LanguageDropdown from "./LanguageDropdown";
+import SettingsButton from "./SettingsButton";
 import FormatButton from "./FormatButton";
 import RunButton from "./RunButton";
 import CloseButton from "./CloseButton"
@@ -9,7 +9,7 @@ function NavBar( roomId ) {
   return (
     <div className="w-full h-28 bg-[#FCF1D3] dark:bg-[#01313F] flex items-center px-3 justify-between">
       <div className="flex gap-4">
-        {/* <LanguageDropdown /> */}
+        <LanguageDropdown />
         <input
           spellCheck={false}
           type="text"
@@ -28,9 +28,9 @@ function NavBar( roomId ) {
         <CloseButton />
       </div>
       <div className="flex gap-3 items-center">
-        {/* <ThemeButton /> */}
+        <ThemeButton />
         <FormatButton />
-        {/* <SettingsButton /> */}
+        <SettingsButton />
       </div>
     </div>
   );
