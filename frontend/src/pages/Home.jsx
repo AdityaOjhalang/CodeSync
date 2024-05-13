@@ -154,7 +154,7 @@ function App() {
             <img alt="Logo" src={Logo}/>
           </figure>
           <h1>CODESYNC</h1>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+          {/* <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p> */}
           <button className={classes["JoinButton"]} onClick={createRoom}>Create Room</button>
           <button className={classes["JoinButton"]} onClick={joinRoom}>Join Room</button>
           <span>
