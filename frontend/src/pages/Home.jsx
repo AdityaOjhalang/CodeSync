@@ -54,16 +54,20 @@ function App() {
       // window.open(joinUrl, '_blank');
       return;
     }
-    const url = `https://0vrj5gcaa6.execute-api.us-east-1.amazonaws.com/dev/check-room?roomId=${roomId}`;
+    const url = `https://8merbrjype.execute-api.us-east-1.amazonaws.com/dev/check-room`;
+    const body = {
+      'queryStringParameters': {
+        'roomId': roomId
+      }
+    };
 
     try {
       const response = await fetch(url, {
-        method: 'GET',
+        method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          // 'Access-Control-Allow-Origin': '*'
-          // 'x-api-key': 'hbXYJh8cSoRgNNpzCmBtraSBccfFNw4aWB6N3Hi0'
         },
+        body: JSON.stringify(body)
       });
 
       if (response.ok) {
