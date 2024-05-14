@@ -14,7 +14,7 @@ CodeSync is a cloud-based Integrated Development Environment (IDE) designed to r
 - [Challenges](#challenges)
 - [Future Work](#future-work)
 - [Contributing](#contributing)
-- [License](#license)
+- [Demo Video](#Demo-Video)
 - [Authors](#authors)
 
 ## Introduction 📝
@@ -192,7 +192,9 @@ Watch the demo of CodeSync on [YouTube](https://youtu.be/BAWfW_pt2eU)! 🎥
 ## Authors 👥
 
 - Aditya Ojha - [ao2612@nyu.edu](mailto:ao2612@nyu.edu)
-- Suprateek Chatterjee - [sc10344@nyu.edu](mailto:sc10344@nyu.edu)
-- Karmanya Mendiratta - [km6296@nyu.edu](mailto:km6296@nyu.edu)
 - Ananya Kumar Gangver - [akk8368@nyu.edu](mailto:akk8368@nyu.edu)
+- Karmanya Mendiratta - [km6296@nyu.edu](mailto:km6296@nyu.edu)
+- Suprateek Chatterjee - [sc10344@nyu.edu](mailto:sc10344@nyu.edu)
+
+
 
