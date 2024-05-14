@@ -5,7 +5,7 @@ import Logo from "./logo-2.png";
 
 
 
-const App = () => {
+const SignUp = () => {
   return (
     <div className={classes["container"]}>
       <LeftPanel />
@@ -93,4 +93,4 @@ const RightPanel = () => {
 
 
 
-export default App;
+export default SignUp;

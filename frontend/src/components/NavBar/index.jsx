@@ -25,7 +25,7 @@ function NavBar( roomId ) {
           placeholder="Command Line Arguments"
         ></input>
         <RunButton roomId={roomId}/>
-        <CloseButton />
+        <CloseButton roomId={roomId}/>
       </div>
       <div className="flex gap-3 items-center">
         <ThemeButton />

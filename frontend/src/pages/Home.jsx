@@ -7,11 +7,12 @@ import classes from './Home.module.css';
 import Logo from "./logo-2.png";
 import userPool from '../config/CognitoConfig';
 import Modal from '../pages/Modal';
+import { useUser } from '../contexts/UserContext';
 
-function App() {
+function Home() {
   const [roomId, setRoomId] = useState('');
   const [email, setEmail] = useState('');
-  const [userId, setUserId] = useState('');  // State for storing user ID
+  const { userId, setUserId } = useUser();  // State for storing user ID
   const [showModal, setShowModal] = useState(false);
   const navigate = useNavigate();
 
@@ -43,6 +44,7 @@ function App() {
         }
       });
     } else {
+      navigate('/')
       toast.error("User not logged in.");
     }
   }, []); // Run only once after the component mounts
@@ -110,7 +112,7 @@ function App() {
     setShowModal(true);
 
 
-    console.log(userId)
+    console.log('UserID:', userId)
     const url = `https://3blezbrfvh.execute-api.us-east-1.amazonaws.com/test/createRoom`; // Modify URL as necessary
     const body = {
       'queryStringParameters': {
@@ -170,7 +172,7 @@ function App() {
   );
 }
 
-export default App;
+export default Home;
 
 
 

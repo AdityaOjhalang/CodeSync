@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 
-const App = () => {
+const SignIn = () => {
   return (
     <div className={classes["container"]}>
       <LeftPanel />
@@ -87,4 +87,4 @@ const RightPanel = () => {
 
 
 
-export default App;
+export default SignIn;
