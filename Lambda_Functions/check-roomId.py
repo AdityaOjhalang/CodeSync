@@ -1,4 +1,5 @@
 import boto3
+from boto3.dynamodb.conditions import Key
 
 # Initialize DynamoDB client
 dynamodb = boto3.resource('dynamodb')
@@ -16,18 +17,23 @@ def lambda_handler(event, context):
 
     # Query DynamoDB to check for the roomId
     response = table.query(
-        KeyConditionExpression='RoomID = :roomId',
-        ExpressionAttributeValues={
-            ':roomId': roomId
-        }
+        KeyConditionExpression=Key('RoomID').eq(roomId)
     )
 
     # Check if any items were found
     if response.get('Items'):
-        return {
-            'statusCode': 200,
-            'body': f"Room ID {roomId} exists and has {len(response['Items'])} records."
-        }
+        room = response['Items'][0]
+        # Check if the room is active
+        if room.get('IsActive') == True:
+            return {
+                'statusCode': 200,
+                'body': f"Room ID {roomId} exists and is active."
+            }
+        else:
+            return {
+                'statusCode': 404,
+                'body': "Room ID not found or not active."
+            }
     else:
         return {
             'statusCode': 404,
