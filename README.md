@@ -61,7 +61,6 @@ The architecture of CodeSync leverages various AWS services to create a robust, 
 ### Additional AWS Services ☁️
 
 - **Amazon SQS** manages message queuing for decoupling internal services and reliably transmitting event data between different components.
-- **AWS SES** handles email notifications for user communications.
 
 ### Architecture Diagram 🖼️
 
@@ -78,7 +77,6 @@ The architecture of CodeSync leverages various AWS services to create a robust, 
 - **Data Storage**: Amazon DynamoDB, Amazon S3
 - **Message Queuing**: Amazon SQS
 - **Container Management**: Amazon EC2
-- **Email Notifications**: AWS SES
 - **Containerization**: Docker
 
 ## Installation ⚙️
@@ -158,7 +156,7 @@ During the development of CodeSync, several challenges were encountered and addr
 - **WebSockets Integration**: Ensuring data consistency and timely delivery across multiple client sessions.
 - **Secure Code Execution**: Using Docker containers to run code securely and in isolation.
 - **Real-Time Output Synchronization**: Synchronizing code output for all participants using WebSockets and AWS S3.
-- **Scalable Deployment**: Automating deployment processes with AWS CodeDeploy for efficient load management.
+- **Scalable Deployment**: Automating deployment processes with AWS Amplify for efficient load management.
 
 ## Future Work 🔮
 
