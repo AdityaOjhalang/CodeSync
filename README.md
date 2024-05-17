@@ -87,26 +87,6 @@ The architecture of CodeSync leverages various AWS services to create a robust, 
 - npm or yarn
 - AWS account with necessary permissions
 
-### Backend Setup 🔧
-
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/AdityaOjhalang/CodeSync.git
-    cd CodeSync
-    ```
-
-2. Install dependencies:
-    ```bash
-    npm install
-    ```
-
-3. Set up AWS services and environment variables as required in `config.js`.
-
-4. Start the backend server:
-    ```bash
-    npm start
-    ```
-
 ### Frontend Setup 🎨
 
 1. Navigate to the frontend directory:
