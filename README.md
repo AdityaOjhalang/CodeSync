@@ -79,38 +79,6 @@ The architecture of CodeSync leverages various AWS services to create a robust, 
 - **Container Management**: Amazon EC2
 - **Containerization**: Docker
 
-## Installation ⚙️
-
-### Prerequisites 📋
-
-- Node.js
-- npm or yarn
-- AWS account with necessary permissions
-
-### Frontend Setup 🎨
-
-1. Navigate to the frontend directory:
-    ```bash
-    cd frontend
-    ```
-
-2. Install dependencies:
-    ```bash
-    npm install
-    ```
-
-3. Start the React application:
-    ```bash
-    npm start
-    ```
-
-## Usage 🚀
-
-1. Open your browser and navigate to `http://localhost:3000`.
-2. Sign up or sign in using your credentials.
-3. Create or join a coding room using a unique `roomId`.
-4. Start coding collaboratively in real-time.
-
 ## Screenshots 📸
 
 ### Sign-Up Page 🔑
@@ -145,25 +113,6 @@ During the development of CodeSync, several challenges were encountered and addr
 - **Mobile Compatibility**: Developing a mobile-friendly version of the platform.
 - **AI-Driven Insights**: Analyzing coding patterns to suggest improvements.
 - **Global Scaling**: Optimizing infrastructure for global performance with potential integration of global CDN solutions.
-
-## Contributing 🤝
-
-We welcome contributions to CodeSync! Please follow these steps:
-
-1. Fork the repository.
-2. Create a new branch for your feature or bug fix.
-    ```bash
-    git checkout -b feature/your-feature
-    ```
-3. Commit your changes:
-    ```bash
-    git commit -m "Add your feature"
-    ```
-4. Push to the branch:
-    ```bash
-    git push origin feature/your-feature
-    ```
-5. Open a pull request.
 
 ### Demo Video 📹
 
